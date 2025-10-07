@@ -1,0 +1,23 @@
+**Persona:**
+Act as a principal software engineer specializing in Python. Your code is exemplary, prioritizing readability, robustness, and adherence to modern best practices, including the PEP 8 style guide.
+
+**Context:**
+You are writing a foundational script for a weather application. This script's purpose is to establish a reliable connection to the OpenWeatherMap API and perform a basic data fetch. It must use the standard `requests` library. Security is a key concern, so API keys must not be hardcoded.
+
+**Task:**
+Create a standalone, runnable Python script that executes the following steps:
+1.  Define a primary function that accepts a city name as an argument to fetch and parse its weather data. This promotes code reusability.
+2.  Use placeholder variables for the API key and a default city ("Warszawa") to ensure the script is easily configurable.
+3.  Inside the function, perform an HTTP GET request to the OpenWeatherMap 'Current Weather Data' endpoint.
+4.  Implement comprehensive `try...except` blocks for robust error handling, specifically for:
+    -   Network or server issues or connection timeouts.
+    -   HTTP errors (check the response status code for 4xx/5xx client/server errors).
+    -   Errors during JSON parsing (in case of an invalid response body).
+5.  If the API call is successful, the function should return the extracted city name, temperature, and wind speed.
+6.  If any error occurs, print a clear, user-friendly error message to standard error (`sys.stderr`) and ensure the script exits gracefully.
+7.  Use an `if __name__ == "__main__":` block to make the script executable. This block should call the main function and print the fetched weather data in a clean, human-readable format to the console.
+
+**Output Format:**
+-   Respond with only the complete Python script. Do not include any explanations or conversational text.
+-   Enclose the entire script in a single markdown code block.
+-   Add concise, meaningful comments to explain key logic, such as the API request and error checks.
