@@ -2,6 +2,9 @@
 
 Aplikacja do pobierania danych pogodowych z OpenWeatherMap API.
 
+# Demo
+https://huggingface.co/spaces/tomlud123/weather-provider
+
 ## Funkcje
 
 - Pobieranie aktualnej pogody dla miast
