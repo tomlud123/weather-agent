@@ -24,7 +24,7 @@ BASE_URL: str = "https://api.openweathermap.org/data/2.5/weather"
 DEFAULT_TIMEOUT: Tuple[float, float] = (3.5, 10.0)  # (connect, read)
 DEFAULT_FORECAST_DAYS: int = 2
 DEFAULT_OUTPUT_FORMAT: str = "json"  # json or csv
-DEFAULT_OUTPUT_FILE: str = "weather_results.json"
+DEFAULT_OUTPUT_FILE: str = "out.json"
 
 
 def get_api_key() -> str | None:
