@@ -47,3 +47,7 @@ data/*.parquet
 # OS / misc
 .DS_Store
 Thumbs.db
+
+# project specific
+out.csv
+out.json
