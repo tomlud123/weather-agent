@@ -20,7 +20,6 @@ load_dotenv()
 
 # Public configuration constants
 API_KEY_ENV_VAR: str = "OPENWEATHER_API_KEY"
-DEFAULT_CITY: str = "Warszawa"
 BASE_URL: str = "https://api.openweathermap.org/data/2.5/weather"
 DEFAULT_TIMEOUT: Tuple[float, float] = (3.5, 10.0)  # (connect, read)
 DEFAULT_FORECAST_DAYS: int = 2

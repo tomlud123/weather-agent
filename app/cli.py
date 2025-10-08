@@ -11,7 +11,7 @@ import json
 import csv
 from pathlib import Path
 
-from config import DEFAULT_CITY, DEFAULT_FORECAST_DAYS, DEFAULT_OUTPUT_FORMAT, DEFAULT_OUTPUT_FILE
+from config import DEFAULT_FORECAST_DAYS, DEFAULT_OUTPUT_FORMAT, DEFAULT_OUTPUT_FILE
 from service import fetch_current_weather, fetch_city_bundle, fetch_many_cities, fetch_many_bundles
 
 
@@ -19,16 +19,10 @@ async def main() -> int:
     parser = argparse.ArgumentParser(
         description="Fetch current weather (and short forecast) via OpenWeatherMap.",
     )
-    group = parser.add_mutually_exclusive_group()
-    group.add_argument(
-        "city",
-        nargs="?",
-        default=None,
-        help=f'City name to query (default: "{DEFAULT_CITY}").',
-    )
-    group.add_argument(
+    parser.add_argument(
         "--cities",
         nargs="+",
+        required=True,
         help="Fetch weather for multiple cities (space-separated).",
     )
     parser.add_argument(
@@ -60,11 +54,8 @@ async def main() -> int:
     )
     args = parser.parse_args()
 
-    # Determine cities list
-    if args.cities:
-        cities = args.cities
-    else:
-        cities = [args.city or DEFAULT_CITY]
+    # Use the required cities list
+    cities = args.cities
 
     # Multi-city logic
     if not args.save:
